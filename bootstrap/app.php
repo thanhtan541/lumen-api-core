@@ -23,9 +23,9 @@ $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
 
-// $app->withFacades();
+$app->withFacades();
 
-// $app->withEloquent();
+$app->withEloquent();
 
 /*
 |--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ $app->singleton(
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
-
+$app->register(Dingo\Api\Provider\LumenServiceProvider::class);
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes
@@ -93,10 +93,27 @@ $app->singleton(
 |
 */
 
+$app['Dingo\Api\Transformer\Factory']->setAdapter(function ($app) {
+    $fractal = new League\Fractal\Manager;
+
+    $fractal->setSerializer(new League\Fractal\Serializer\JsonApiSerializer);
+
+    return new Dingo\Api\Transformer\Adapter\Fractal($fractal);
+});
+$app['Dingo\Api\Exception\Handler']->setErrorFormat([
+    'error' => [
+        'message' => ':message',
+        'errors' => ':errors',
+        'code' => ':code',
+        'status_code' => ':status_code',
+        'debug' => ':debug'
+    ]
+]);
+
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
 ], function ($router) {
-    require __DIR__.'/../routes/web.php';
+    require __DIR__.'/../app/Api/route.php';
 });
 
 return $app;
