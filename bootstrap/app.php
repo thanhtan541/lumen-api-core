@@ -27,6 +27,7 @@ $app->withFacades();
 
 $app->withEloquent();
 
+$app->configure('swagger-lume');
 /*
 |--------------------------------------------------------------------------
 | Register Container Bindings
@@ -82,6 +83,7 @@ $app->singleton(
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 $app->register(Dingo\Api\Provider\LumenServiceProvider::class);
+$app->register(\SwaggerLume\ServiceProvider::class);
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes

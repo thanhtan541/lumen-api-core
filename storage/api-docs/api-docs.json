@@ -1,0 +1,117 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Lumen APIs",
+        "description": "Base Lumen APIs",
+        "termsOfService": "",
+        "contact": {
+            "email": "tan.nguyen.php@gmail.com"
+        },
+        "license": {
+            "name": "TAN2.0",
+            "url": "tannt.com"
+        },
+        "version": "LAC 1.0.0"
+    },
+    "host": "lumen-api-core.local",
+    "basePath": "/",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "paths": {
+        "/v1/example": {
+            "get": {
+                "tags": [
+                    "Test"
+                ],
+                "summary": "Test Api",
+                "description": "Test Swagger View",
+                "operationId": "",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "menuId",
+                        "in": "path",
+                        "description": "Menu Id",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Return json test",
+                        "schema": {
+                            "properties": {
+                                "data": {
+                                    "description": "Menu Fields",
+                                    "properties": {
+                                        "test_id": {
+                                            "type": "integer"
+                                        },
+                                        "test_group_id": {
+                                            "type": "integer"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "description": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "examples": {
+                            "data": [
+                                {
+                                    "test_id": 1,
+                                    "test_group_id": 1,
+                                    "name": "Test string",
+                                    "description": "This is example from Swagger"
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Show Error message"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "data": {
+            "properties": {
+                "cus_id": {
+                    "description": "Class BaseController",
+                    "type": "integer"
+                },
+                "whs_id": {
+                    "description": "Class BaseController",
+                    "type": "integer"
+                },
+                "name": {
+                    "description": "Class BaseController",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Class BaseController",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "externalDocs": {
+        "description": "",
+        "url": ""
+    }
+}
