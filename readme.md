@@ -1,21 +1,33 @@
-# Lumen PHP Framework
+## Lumen Api Core Project ##
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+Laravel/Lumen 5.5
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+### Preparation ###
 
-## Official Documentation
+* `PHP >= 7.0.0`
+* `composer`
 
-Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
+### Installation ###
 
-## Security Vulnerabilities
+* `git clone` https://github.com/thanhtan541/lumen-api-core.git
+* `cd projectname`
+* `composer install`
+* `create` *.env* `by cloning ` *.env.example*
+* `php artisan key:generate`
+* `php artisan jwt:secret`
+* `Create a database and inform` *.env*
+* `php artisan serve` to start the app on http://localhost:8000/
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
 
-## License
+### Include ###
 
-The Lumen framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+### Features ###
+
+* Home page
+* Register/Login
+
+### Built With ###
+
+* [Dingo API](https://github.com/dingo/api/wiki) - RESTful API 
+* [Swagger Lume](https://github.com/DarkaOnLine/SwaggerLume) - The Api Documentation
+* [JWT](http://jwt-auth.readthedocs.io/en/develop/) - Json Web Token
